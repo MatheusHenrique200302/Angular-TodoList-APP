@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-auth-dbc61": {
+      "hosting": {
+        "ngApp": [
+          "angular-auth-dbc61"
+        ]
+      }
+    }
+  }
+}

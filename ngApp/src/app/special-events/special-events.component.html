@@ -1,0 +1,108 @@
+<div class="row">
+  <div class="col-md-12 pt-4 pb-1"></div>
+</div>
+
+<!-- <div class="mt-1">
+    <div class="col-12 mb-3" >
+        <div class="card text-center" *ngFor="let event of specialEvents">
+            <div class="card-body">
+                <h5 class="card-title">{{event.taskname}}</h5>
+                <p class="card-text">{{event.taskdesc}}</p>
+            </div> -->
+<!-- <div class="card-footer text-muted">
+                {{event.date | date:'dd/M/y'}}
+            </div> -->
+<!-- </div>
+    </div>
+</div> -->
+<div class="row">
+  <div class="col-md-3 col-lg-3"></div>
+  <div class="col-md-6 col-lg-6 col-sm-12">
+    <div class="card shadow">
+      <ul class="list-group">
+        <div class="row">
+          <div class="col-6">
+            <div class="m-2 p-1">
+              <button
+                class="btn btn-outline-success rounded-pill"
+                (click)="show = !show"
+              >
+                {{ show ? "-" : "+" }}
+              </button>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="m-2 p-1 float-right">
+              <button class="btn btn-outline-danger rounded-pill">X</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div *ngIf="show" class="card text-center mt-3">
+              <h3 class="card-title pt-1">Create Tasks</h3>
+              <div class="m-xl-1 p-2">
+                <form>
+                  <div class="form-group">
+                    <label for="name">Task Name</label>
+                    <div class="input-group">
+                      <input
+                        [(ngModel)]="registerTask.taskname"
+                        name="name"
+                        type="text"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="">Task Description</label>
+                    <input
+                      [(ngModel)]="registerTask.taskdesc"
+                      name="desc"
+                      type="text"
+                      class="form-control rounded-0"
+                      required
+                    />
+                  </div>
+                  <input
+                    type="hidden"
+                    [(ngModel)]="registerTask.taskstatus"
+                    value="false"
+                    name="status"
+                  />
+                  <button
+                    (click)="CreateTask()"
+                    class="btn btn-success align-self-center"
+                  >
+                    Create
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <li class="list-group-item">
+          <ul class="list-group">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+              *ngFor="let event of specialEvents"
+            >
+              <span [ngClass]="event.taskStatus ? 'done-item' : 'fst-italic'">{{
+                event.taskname
+              }}</span>
+              <span class="badge rounded-pill">
+                <input
+                  type="checkbox"
+                  [checked]="event.taskStatus"
+                  (click)="doTask(event._id, event.taskStatus)"
+                />
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-3 col-lg-3"></div>
+</div>
