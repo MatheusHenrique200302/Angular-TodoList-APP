@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
 })
 
 export class AuthService {
-  private _registerUrl = "http://localhost:3000/api/register";
-  private _loginUrl = "http://localhost:3000/api/login";
-  private _ctaskUrl = "http://localhost:3000/api/taskcreate";
-  private _dtaskUrl = "http://localhost:3000/api/taskdelete";
-  private _uptaskUrl = "http://localhost:3000/api/taskupdate";
+  private _registerUrl = "https://restapi-angulartodoapp.matheushenriq73.repl.co/api/register";
+  private _loginUrl = "https://restapi-angulartodoapp.matheushenriq73.repl.co/api/login";
+  private _ctaskUrl = "https://restapi-angulartodoapp.matheushenriq73.repl.co/api/taskcreate";
+  private _dtaskUrl = "https://restapi-angulartodoapp.matheushenriq73.repl.co/api/taskdelete";
+  private _uptaskUrl = "https://restapi-angulartodoapp.matheushenriq73.repl.co/api/taskupdate";
   constructor(private http: HttpClient,private _router: Router) { }
 
 registerUser(user){
