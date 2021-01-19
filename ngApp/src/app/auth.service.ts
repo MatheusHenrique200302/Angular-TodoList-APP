@@ -31,7 +31,6 @@ updateTask(data){
   return this.http.post<any>(this._uptaskUrl,data)
 }
 
-
 loginUser(user){
   return this.http.post<any>(this._loginUrl,user);
 }
