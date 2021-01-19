@@ -1,5 +1,3 @@
 node_modules
 node_modules
-ngApp/src/environments/environment.ts
-ngApp/src/environments/environment.prod.ts
-ngApp/src/environments/environment.ts
+ngApp/src/environments/
