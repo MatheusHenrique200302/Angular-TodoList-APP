@@ -4,15 +4,6 @@
 
 export const environment = {
   production: false,
-  firebase : {
-    apiKey: "AIzaSyAoxJCaAcA1PFnn9ThbeYJo7neY-tMhDNQ",
-    authDomain: "my-project-1512006214016.firebaseapp.com",
-    databaseURL: "https://my-project-1512006214016-default-rtdb.firebaseio.com",
-    projectId: "my-project-1512006214016",
-    storageBucket: "my-project-1512006214016.appspot.com",
-    messagingSenderId: "1020154914637",
-    appId: "1:1020154914637:web:e6e3da0241401cad2c3904"
-  },
   MYURL:"https://restapi-angulartodoapp.matheushenriq73.repl.co"
 };
 
