@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.	
 
 export const environment = {	
-    production: false,
-    MYURL: process.env.MYURL
+    production: true,
+    MYURL: "https://restapi-angulartodoapp.matheushenriq73.repl.co"
   };	
   
   /*	
