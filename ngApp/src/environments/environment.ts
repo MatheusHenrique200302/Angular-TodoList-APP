@@ -4,6 +4,7 @@
 
 export const environment = {	
     production: false,
+    MYURL: process.env.MYURL
   };	
   
   /*	

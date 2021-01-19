@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { env } from 'process';
-//  import { environment } from 'src/environments/environment';
+
+ import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class EventService {
-  myurl = process.env.MYURL
+  myurl = environment.MYURL
   private _eventsUrl = `${this.myurl}/api/events`;
   private _specialeventsUrl = `${this.myurl}/api/mytasks`
   constructor(private http : HttpClient) { }

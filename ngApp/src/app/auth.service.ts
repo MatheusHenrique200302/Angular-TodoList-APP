@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-// import { env } from 'process';
-// import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
-  myurl = process.env.MYURL
+  myurl = environment.MYURL;
   private _registerUrl = `${this.myurl}/api/register`;
   private _loginUrl = `${this.myurl}/api/login`;
   private _ctaskUrl = `${this.myurl}/api/taskcreate`;
