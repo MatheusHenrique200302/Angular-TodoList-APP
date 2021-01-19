@@ -4,8 +4,6 @@
 
 export const environment = {	
     production: false,	
-    
-    MYURL:"https://restapi-angulartodoapp.matheushenriq73.repl.co"	
   };	
   
   /*	
