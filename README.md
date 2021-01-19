@@ -1,8 +1,8 @@
-# AngularAuth
-Angular project Created using Angular,Express.js,Node.js and MongoDB, using JSON Web Token Authentication, develop along with the Youtube series  by Codevolution (avaliable [Here](https://www.youtube.com/watch?v=ozXGkqpzo_A&list=PLC3y8-rFHvwg2RBz6UplKTGIXREj9dV0G)).
+# Angular TodoList App
+Angular project Created using Angular,Express.js,Node.js and MongoDB, using JSON Web Token Authentication
 
-If you're looking for a Angular tutorial about authentication, give it a try!
+This project was created to expand my personal knowledge of Angular and the M.E.A.N stack
 
-In this project, when you visit the page, you land on the events page/component, that have some dummy events with lorem ipsum descriptions, you can't reach the 'members' page/component unless you have a account logged in, to check that, try logging in with the email "a@a.com" and with the password "123".
+in this project you can create tasks, check them and delete them, keep in mind that you need a to register in order to use the app, you can create yours by clicking in the "Register" option in the navigation bar, I highly recommend you to not use any real and sensitive information when creating you account,since this app is made for learning purposes only and has little to none security. If you don't want to register any information, you can try logging in with the email "a@a.com" and with the password "123".
 
-# DO NOT REGISTER REAL PERSONAL INFO, THERES PRATICALLY NONE SECURITY IN THIS PROJECT, SOME SMART PEOPLE CAN GET ACCESS TO THE INFO YOU PUT IN THERE, I AM NOT RESPONSIBLE FOR ANY INFO THAT CAN GET STOLEN
+
