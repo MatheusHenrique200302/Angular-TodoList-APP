@@ -12,7 +12,8 @@ export const environment = {
     storageBucket: "my-project-1512006214016.appspot.com",
     messagingSenderId: "1020154914637",
     appId: "1:1020154914637:web:e6e3da0241401cad2c3904"
-  }
+  },
+  MYURL:"https://restapi-angulartodoapp.matheushenriq73.repl.co"
 };
 
 /*
