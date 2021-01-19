@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { env } from 'process';
+// import { env } from 'process';
 // import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { env } from 'process';
 })
 
 export class AuthService {
-  myurl = env.MYURL
+  myurl = process.env.MYURL
   private _registerUrl = `${this.myurl}/api/register`;
   private _loginUrl = `${this.myurl}/api/login`;
   private _ctaskUrl = `${this.myurl}/api/taskcreate`;
