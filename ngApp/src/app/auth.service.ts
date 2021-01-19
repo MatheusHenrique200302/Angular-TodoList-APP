@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
-  private _registerUrl = "https://restapi-angulartodoapp.matheushenriq73.repl.co/api/register";
-  private _loginUrl = "https://restapi-angulartodoapp.matheushenriq73.repl.co/api/login";
-  private _ctaskUrl = "https://restapi-angulartodoapp.matheushenriq73.repl.co/api/taskcreate";
-  private _dtaskUrl = "https://restapi-angulartodoapp.matheushenriq73.repl.co/api/taskdelete";
-  private _uptaskUrl = "https://restapi-angulartodoapp.matheushenriq73.repl.co/api/taskupdate";
+  myurl = environment.MYURL
+  private _registerUrl = `${this.myurl}/api/register`;
+  private _loginUrl = `${this.myurl}/api/login`;
+  private _ctaskUrl = `${this.myurl}/api/taskcreate`;
+  private _dtaskUrl = `${this.myurl}/api/taskdelete`;
+  private _uptaskUrl = `${this.myurl}/api/taskupdate`;
   constructor(private http: HttpClient,private _router: Router) { }
 
 registerUser(user){

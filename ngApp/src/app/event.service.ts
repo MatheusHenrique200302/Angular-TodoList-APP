@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class EventService {
-  private _eventsUrl = "https://restapi-angulartodoapp.matheushenriq73.repl.co/api/events";
-  private _specialeventsUrl = "https://restapi-angulartodoapp.matheushenriq73.repl.co/api/mytasks"
+  myurl = environment.MYURL
+  private _eventsUrl = `${this.myurl}/api/events`;
+  private _specialeventsUrl = `${this.myurl}/api/mytasks`
   constructor(private http : HttpClient) { }
 
 getEvents(){
