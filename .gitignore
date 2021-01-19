@@ -1,4 +1,4 @@
 node_modules
 node_modules
-environment.ts
-environment.prod.ts
+ngApp/src/environments/environment.ts
+ngApp/src/environments/environment.prod.ts
