@@ -1,35 +1,77 @@
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Angular ToDoList</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item ">
-          <a class="nav-link" routerLink="/features" routerLinkActive="active">Home</a>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/features" routerLinkActive="active"
+            >Home</a
+          >
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLink="/special" routerLinkActive="active">Minhas Tarefas</a>
+          <a class="nav-link" routerLink="/special" routerLinkActive="active"
+            >Minhas Tarefas</a
+          >
         </li>
-     
       </ul>
       <ul class="navbar-nav">
-          <a class="nav-link" *ngIf="!authService.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
-          <a class="nav-link" *ngIf="!authService.loggedIn()" routerLink="/register" routerLinkActive="active">Register</a>
-          <a class="nav-link" style="cursor: pointer;" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()" >Logout</a>
+        <a
+          class="nav-link"
+          *ngIf="!authService.loggedIn()"
+          routerLink="/login"
+          routerLinkActive="active"
+          >Login</a
+        >
+        <a
+          class="nav-link"
+          *ngIf="!authService.loggedIn()"
+          routerLink="/register"
+          routerLinkActive="active"
+          >Register</a
+        >
+        <a
+          class="nav-link"
+          style="cursor: pointer"
+          *ngIf="authService.loggedIn()"
+          (click)="authService.logoutUser()"
+          >Logout</a
+        >
       </ul>
     </div>
   </nav>
   <main>
     <div class="container-fluid">
       <router-outlet></router-outlet>
-  </div>
+    </div>
   </main>
-  <footer class="footer py-2 bg-dark">
+  <footer class="footer py-2 bg-dark text-white text-center">
     <div class="container">
-      <span class="text-muted">Place sticky footer content here.</span>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <span>Angular Todo APP © 2021 - Matheus H. Santos Dev</span>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <a class="text-white mx-2 px-2" target="_blank" href="https://github.com/MatheusHenrique200302"><i class="fab fa-github"></i></a>
+          <a class="text-white mx-2 px-2" target="_blank" href="https://www.linkedin.com/in/matheus-henrique-dos-santos-1031711a1/"><i class="fab fa-linkedin"></i></a>
+          <a class="text-white mx-2 px-2" target="_blank" href="https://www.instagram.com/mtshenrique123/"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
     </div>
   </footer>
+</body>
