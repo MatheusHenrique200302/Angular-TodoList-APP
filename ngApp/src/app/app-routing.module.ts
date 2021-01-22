@@ -13,7 +13,7 @@ const routes: Routes = [
     pathMatch:'full'
   },
   {
-    path:'/features',
+    path:'features',
     component: EventsComponent
   },
   {
