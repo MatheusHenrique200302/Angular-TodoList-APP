@@ -9,11 +9,11 @@ import { SpecialEventsComponent } from './special-events/special-events.componen
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/features',
+    component: EventsComponent,
     pathMatch:'full'
   },
   {
-    path:'features',
+    path:'/features',
     component: EventsComponent
   },
   {
