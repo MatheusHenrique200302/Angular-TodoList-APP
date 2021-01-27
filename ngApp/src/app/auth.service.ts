@@ -14,7 +14,16 @@ export class AuthService {
   private _ctaskUrl = `${this.myurl}/api/taskcreate`;
   private _dtaskUrl = `${this.myurl}/api/taskdelete`;
   private _uptaskUrl = `${this.myurl}/api/taskupdate`;
+  private _userCounterUrl = `${this.myurl}/api/usercounter`;
+  private _taskCounterUrl = `${this.myurl}/api/taskcounter`;
   constructor(private http: HttpClient,private _router: Router) { }
+
+  userCounter(){
+    return this.http.get<any>(this._userCounterUrl);
+  }
+  taskCounter(){
+    return this.http.get<any>(this._taskCounterUrl);
+  }
 
 registerUser(user){
   return this.http.post<any>(this._registerUrl,user);

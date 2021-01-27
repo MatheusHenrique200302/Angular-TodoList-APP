@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 import { EventService } from '../event.service';
 
 
@@ -11,8 +12,14 @@ import { EventService } from '../event.service';
 })
 export class EventsComponent implements OnInit {
 events=[]
+userCount = {
+  value : Number
+}
+taskCount = {
+  value: Number
+}
 
-  constructor(private _eventService: EventService) { 
+  constructor(private _authService: AuthService,private _eventService: EventService) { 
  
   }
 
@@ -22,7 +29,14 @@ events=[]
       res => this.events= res,
       err => console.log(err)
     );
-    
+    this._authService.userCounter().subscribe(
+      res => this.userCount = res,
+      err => console.log(err)
+    )
+    this._authService.taskCounter().subscribe(
+      res => this.taskCount = res,
+      err => console.log(err)
+    )
   }
 
 }
