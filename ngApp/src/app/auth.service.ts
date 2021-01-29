@@ -53,6 +53,6 @@ getToken(){
 
 logoutUser(){
   localStorage.removeItem('token');
-  this._router.navigate(['/features']);
+  this._router.navigate(['/']);
 }
 }
