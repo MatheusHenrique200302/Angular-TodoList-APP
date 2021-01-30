@@ -33,7 +33,12 @@
           </div>
           <div class="col-6">
             <div class="m-2 p-1 float-right">
-              <button class="btn btn-outline-danger rounded-pill">X</button>
+              <button
+                class="btn btn-outline-danger rounded-pill"
+                (click)="show2 = !show2"
+              >
+                {{ show2 ? "-" : "X" }}
+              </button>
             </div>
           </div>
         </div>
@@ -78,6 +83,18 @@
                     Create
                   </button>
                 </form>
+              </div>
+            </div>
+            <div *ngIf="show2" class="card text-center mt-3">
+              <div class="form-group mb-3 p-3">
+                <label class="text-left" for="taskstodelete">Nome da Tarefa</label>
+               
+                  <select  [(ngModel)]="newdata._id"  id="taskstodelete" class="custom-select">
+                    <option *ngFor="let event of specialEvents" [ngValue]="event._id">
+                      {{event.taskname}}
+                    </option>
+                  </select>
+                  <button (click)="DeleteTask()" class="btn btn-danger mt-3">Excluir</button>
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ import { AuthService } from '../auth.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { __await } from 'tslib';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-special-events',
@@ -13,10 +14,12 @@ import { __await } from 'tslib';
   styleUrls: ['./special-events.component.css']
 })
 export class SpecialEventsComponent implements OnInit {
+  deltask = []
   donetaskcss = "text-decoration-line-through"
   checked = false
   specialEvents = []
   show = null
+  show2 = null
   registerTask = {
    taskname: "",
    taskdesc: "",
@@ -27,9 +30,9 @@ export class SpecialEventsComponent implements OnInit {
     status: undefined
   }
   newdata = {
-    _id : ""
+  _id: ""
   }
-
+ 
   constructor(private _snackBar: MatSnackBar,private _eventService: EventService,private _router: Router,private _auth: AuthService) { }
 
   ngOnInit(){
@@ -65,9 +68,14 @@ export class SpecialEventsComponent implements OnInit {
       },
       err => console.log(err)
     );
+   this.registerTask = {
+      taskname: "",
+      taskdesc: "",
+      taskstatus: false
+     }
+
    }
-   DeleteTask(id2){
-    this.newdata._id = id2
+   DeleteTask(){
      this._auth.deleteTask(this.newdata).subscribe(
        res=> {
           this._eventService.getSpecialEvents().subscribe(
@@ -76,7 +84,8 @@ export class SpecialEventsComponent implements OnInit {
        },
        err => console.log(err));
        this.ngOnInit();
-       this._snackBar.open("Deletado com sucesso","OK")
+        this._snackBar.open("Deletado com sucesso","OK")
+     
    }
 
   doTask(id,status){
