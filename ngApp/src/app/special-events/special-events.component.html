@@ -45,12 +45,13 @@
         <div class="row">
           <div class="col-12">
             <div *ngIf="show" class="card text-center mt-3">
-              <h3 class="card-title pt-1">Create Tasks</h3>
+              <!-- <h3 class="card-title pt-1">Create Tasks</h3> -->
               <div class="m-xl-1 p-2">
                 <form>
                   <div class="form-group">
-                    <label for="name">Task Name</label>
+                    <label for="name" class="form-label">Criar Tarefa</label>
                     <div class="input-group">
+                      <span class="input-group-text" id="basic-addon3">Nome da Tarefa:</span>
                       <input
                         [(ngModel)]="registerTask.taskname"
                         name="name"
@@ -60,7 +61,7 @@
                       />
                     </div>
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="">Task Description</label>
                     <input
                       [(ngModel)]="registerTask.taskdesc"
@@ -69,7 +70,7 @@
                       class="form-control rounded-0"
                       required
                     />
-                  </div>
+                  </div> -->
                   <input
                     type="hidden"
                     [(ngModel)]="registerTask.taskstatus"
@@ -80,14 +81,14 @@
                     (click)="CreateTask()"
                     class="btn btn-success align-self-center"
                   >
-                    Create
+                    Criar
                   </button>
                 </form>
               </div>
             </div>
             <div *ngIf="show2" class="card text-center mt-3">
               <div class="form-group mb-3 p-3">
-                <label class="text-left" for="taskstodelete">Nome da Tarefa</label>
+                <label class="form-label text-left" for="taskstodelete">Selecione a Tarefa</label>
                
                   <select  [(ngModel)]="newdata._id"  id="taskstodelete" class="custom-select">
                     <option *ngFor="let event of specialEvents" [ngValue]="event._id">
