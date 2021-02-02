@@ -67,8 +67,7 @@ export class SpecialEventsComponent implements OnInit {
           }
         }
       );
-    }
-    
+    }  
   ngOnInit() {
     this.LoadTasks();
     if(this.delsnackbar == true){
@@ -101,11 +100,11 @@ export class SpecialEventsComponent implements OnInit {
     this.delsnackbar = true;
     }
 
- async doTask(id, status) {
+doTask(id, status) {
     this.updateTask._id = id;
     this.updateTask.status = status;
     // alert(this.updateTask.status+"-"+this.updateTask._id);
-  await this._auth.updateTask(this.updateTask).subscribe(
+  this._auth.updateTask(this.updateTask).subscribe(
       (res) => {this.LoadTasks();
       },
       (err) => console.log(err)
