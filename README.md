@@ -10,7 +10,7 @@ Nesse Projeto você pode criar tarefas, conclui-las e deleta-las, tenha em mente
 
 # English
 ## Angular TodoList App
-Angular project Created using Angular 8,ExpressJS,NodeJS and MongoDB, using JSON Web Token Authentication.
+Angular project created using Angular 8,ExpressJS,NodeJS and MongoDB, using JSON Web Token Authentication.
 
 This project was created to expand my personal knowledge of Angular and the M.E.A.N stack and practice them.
 
