@@ -6,6 +6,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { url } from 'inspector';
 import { AuthService } from '../auth.service';
 import { EventService } from '../event.service';
 
@@ -23,6 +24,12 @@ import { EventService } from '../event.service';
         animate(2000,style({opacity: 0}))
       ])
     ]),
+    trigger('load',[
+      transition('void => *',[
+        state('onLoad', style({backgroundImage: "../../assets/images/loading.gif" }))
+      ])
+      
+    ])
   ],
   styleUrls: ['./events.component.css'],
 })
