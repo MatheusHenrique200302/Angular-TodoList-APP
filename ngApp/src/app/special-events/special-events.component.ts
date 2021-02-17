@@ -6,36 +6,32 @@ import { AuthService } from '../auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { __await } from 'tslib';
-import { trigger, transition, style, animate} from '@angular/animations';
+import { trigger, transition, style, animate } from '@angular/animations';
 import { FormControl, FormGroup } from '@angular/forms';
-import { BehaviorSubject } from "rxjs";
-
-
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-special-events',
   templateUrl: './special-events.component.html',
   animations: [
     trigger('fade', [
-
-      transition('void => *', [
-        style({opacity: 0}),
-        animate(2000),
-      ]),
-      transition('* => void',[
-        animate(2000,style({opacity: 0}))
-      ])
-    ]),],
+      transition('void => *', [style({ opacity: 0 }), animate(2000)]),
+      transition('* => void', [animate(2000, style({ opacity: 0 }))]),
+    ]),
+  ],
   styleUrls: ['./special-events.component.css'],
 })
 export class SpecialEventsComponent implements OnInit {
   delsnackbar = null;
+  newTasks = [];
   deltask = [];
   donetaskcss = 'text-decoration-line-through';
   checked = false;
   specialEvents = [];
+  realtasks =[];
   show = null;
   show2 = null;
+  
   registerTask = {
     taskname: '',
     taskdesc: '',
@@ -56,21 +52,27 @@ export class SpecialEventsComponent implements OnInit {
     private _auth: AuthService
   ) {}
 
-    LoadTasks(){
-      this._eventService.getSpecialEvents().subscribe(
-        (res) => (this.specialEvents = res),
-        (err) => {
-          if (err instanceof HttpErrorResponse) {
-            if (err.status === 401) {
-              this._router.navigate(['/login']);
-            }
+  LoadTasks() {
+    this._eventService.getSpecialEvents().subscribe(
+      (res) =>
+       {this.realtasks = res;
+        this.specialEvents = this.realtasks;
+      
+      
+      },
+      (err) => {
+        if (err instanceof HttpErrorResponse) {
+          if (err.status === 401) {
+            this._router.navigate(['/login']);
           }
         }
-      );
-    }  
+      }
+    );
+  
+  }
   ngOnInit() {
     this.LoadTasks();
-    if(this.delsnackbar == true){
+    if (this.delsnackbar == true) {
       this._snackBar.open('Deletado com sucesso', 'OK');
       this.delsnackbar = null;
     }
@@ -78,8 +80,7 @@ export class SpecialEventsComponent implements OnInit {
   CreateTask() {
     this._auth.CreateTask(this.registerTask).subscribe(
       (res) => {
-        this._snackBar.open('Realizado com sucesso', 'OK'),
-         this.LoadTasks();
+        this._snackBar.open('Realizado com sucesso', 'OK'), this.LoadTasks();
       },
       (err) => console.log(err)
     );
@@ -90,22 +91,24 @@ export class SpecialEventsComponent implements OnInit {
     };
     this.show = null;
   }
-   DeleteTask() {
-     this._auth.deleteTask(this.newdata).subscribe(
-      (res) => { this.specialEvents = res        
-        },
+  DeleteTask() {
+    this._auth.deleteTask(this.newdata).subscribe(
+      (res) => {
+        this.specialEvents = res;
+      },
       (err) => console.log(err)
-    );     
+    );
     this.show2 = null;
     this.delsnackbar = true;
-    }
+  }
 
-doTask(id, status) {
+  doTask(id, status) {
     this.updateTask._id = id;
     this.updateTask.status = status;
     // alert(this.updateTask.status+"-"+this.updateTask._id);
-  this._auth.updateTask(this.updateTask).subscribe(
-      (res) => {this.LoadTasks();
+    this._auth.updateTask(this.updateTask).subscribe(
+      (res) => {
+        this.specialEvents = res;
       },
       (err) => console.log(err)
     );

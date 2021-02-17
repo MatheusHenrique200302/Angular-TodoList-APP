@@ -15,6 +15,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { TestingComponent } from './testing/testing.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     RegisterComponent,
     LoginComponent,
     EventsComponent,
-    SpecialEventsComponent
+    SpecialEventsComponent,
+    TestingComponent
   ],
   imports: [
     BrowserModule,
