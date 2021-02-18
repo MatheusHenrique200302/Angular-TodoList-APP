@@ -1,15 +1,41 @@
 <div class="container-fluid">
-  <div  @fade class="  mt-2 w-100">
+  <div @fade class="mt-2 w-100">
     <div class="row g-1">
       <div class="col-md-6">
-        <img src="../../assets/images/carousel-1.png" class="img-fluid w-100" alt="...">
+        <img
+          src="../../assets/images/carousel-1.png"
+          class="img-fluid w-100"
+          alt="..."
+        />
       </div>
       <div class="col-md-6">
         <div class="card-body">
           <h1 class="card-title">Angular Todo App</h1>
-          <p class="card-text">Gerencie suas tarefas e organize seu o seu dia! Crie,Conclua,Exclua tarefas para manter suas atividades em ordem!</p>
-          <p class="card-text"><small class="text-muted">{{userCount.value}} usuários Cadastrados!</small></p>
-          <p class="card-text"><small class="text-muted">{{taskCount.value}} tarefas Cadastradas!</small></p>
+          <p class="card-text">
+            Gerencie suas tarefas e organize seu o seu dia! Crie,Conclua,Exclua
+            tarefas para manter suas atividades em ordem!
+          </p>
+          <div  *ngIf="userCount.value==0">
+            <mat-progress-spinner  diameter="20" color="primary" mode="indeterminate"></mat-progress-spinner>
+          </div>
+          <div *ngIf="userCount.value!=0">
+            <p class="card-text">
+              <small class="text-muted">
+                {{ userCount.value }} usuários Cadastrados!
+              </small>
+            </p>
+          </div>
+          <div  *ngIf="taskCount.value==0">
+            <mat-progress-spinner diameter="20" color="primary" mode="indeterminate"></mat-progress-spinner>
+          </div>
+          <div *ngIf="taskCount.value!=0">
+            <p class="card-text">
+            <small class="text-muted">
+              {{ taskCount.value }} tarefas Cadastradas!
+            </small>
+          </p>
+        </div>
+          
         </div>
       </div>
     </div>
@@ -24,12 +50,12 @@
           <div class="col-md-4">
             <img
               src="../../assets/images/MEAN_STACK.png"
-              class="img-fluid w-100 mt-5 pt-4 pl-2  d-block"
+              class="img-fluid w-100 mt-5 pt-4 pl-2 d-block"
               alt="..."
             />
           </div>
-          <div  class="col-md-6">
-            <div  class="card-body">
+          <div class="col-md-6">
+            <div class="card-body">
               <h2 class="text-center">Feito Na M.E.A.N Stack</h2>
               <p class="card-text">
                 Esse projeito foi feito com a Stack M.E.A.N: MongoDB como banco
@@ -43,7 +69,7 @@
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12">
-      <div  @fade class="card h-100 mb-3" style="max-width: 680px">
+      <div @fade class="card h-100 mb-3" style="max-width: 680px">
         <div class="row row-cols-lg-2 g-1">
           <div class="col-md-4">
             <img
@@ -72,7 +98,7 @@
   <div class="m-3"></div>
   <div class="row g-1">
     <div class="col-lg-6 col-md-6 col-sm-12">
-      <div  @fade class="card h-100 mb-3" style="max-width: 680px">
+      <div @fade class="card h-100 mb-3" style="max-width: 680px">
         <div class="row g-1">
           <div class="col-md-4">
             <img
@@ -83,10 +109,11 @@
           </div>
           <div class="col-md-6">
             <div class="card-body">
-              <h2 class=" text-center">Estilizado com Bootstrap</h2>
+              <h2 class="text-center">Estilizado com Bootstrap</h2>
               <p class="card-text">
-               Os arquivos de estilo em cascata (CSS) dessa aplicação são todas da biblioteca de Front-end Mais famosa do mundo: O Bootstrap!<br>
-               (Foi-se utilizada a versão 4.0)
+                Os arquivos de estilo em cascata (CSS) dessa aplicação são todas
+                da biblioteca de Front-end Mais famosa do mundo: O Bootstrap!<br />
+                (Foi-se utilizada a versão 4.0)
               </p>
             </div>
           </div>
@@ -94,7 +121,7 @@
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12">
-      <div  @fade class="card h-100 mb-3" style="max-width: 680px">
+      <div @fade class="card h-100 mb-3" style="max-width: 680px">
         <div class="row g-1">
           <!-- <div class="col-md-4">
             <img
@@ -106,7 +133,7 @@
           <div class="col-md-12">
             <div class="card-body">
               <h2 class="text-center">Entre em contato!</h2>
-              <div class="card-text text-justify  p-3">
+              <div class="card-text text-justify p-3">
                 <div class="row">
                   <div class="col-12">
                     <i class="fas fa-envelope"></i>
@@ -115,12 +142,15 @@
                   <div class="col-12">
                     <i class="fab fa-whatsapp"></i>
                     +55 (12) 99647-4546
-
                   </div>
                   <div class="col-12">
-                   <i class="fab fa-linkedin"></i>
-                   <a class="text-dark mx-2 px-2" target="_blank" href="https://www.linkedin.com/in/matheus-henrique-dos-santos-1031711a1/">Visitar</a>
-
+                    <i class="fab fa-linkedin"></i>
+                    <a
+                      class="text-dark mx-2 px-2"
+                      target="_blank"
+                      href="https://www.linkedin.com/in/matheus-henrique-dos-santos-1031711a1/"
+                      >Visitar</a
+                    >
                   </div>
                 </div>
               </div>

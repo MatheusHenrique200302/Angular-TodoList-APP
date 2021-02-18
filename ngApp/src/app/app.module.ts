@@ -15,6 +15,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressSpinnerModule
   ],
   providers: [AuthService,AuthGuard,EventService,{
     provide: HTTP_INTERCEPTORS,

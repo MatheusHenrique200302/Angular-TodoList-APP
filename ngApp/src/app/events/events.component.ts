@@ -48,6 +48,7 @@ export class EventsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    if(this.userCount.value == 0 && this.taskCount.value == 0 ) {  }
     this._eventService.getEvents().subscribe(
       (res) => (this.events = res),
       (err) => console.log(err)
