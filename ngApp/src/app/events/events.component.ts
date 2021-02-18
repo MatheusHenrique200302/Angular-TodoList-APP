@@ -6,7 +6,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { url } from 'inspector';
+
 import { AuthService } from '../auth.service';
 import { EventService } from '../event.service';
 
@@ -36,10 +36,10 @@ import { EventService } from '../event.service';
 export class EventsComponent implements OnInit {
   events = [];
   userCount = {
-    value: Number,
+    value: 0,
   };
   taskCount = {
-    value: Number,
+    value: 0,
   };
 
   constructor(
