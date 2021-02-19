@@ -88,6 +88,7 @@ export class SpecialEventsComponent implements OnInit {
     }
   }
   CreateTask() {
+    this.loadingData = true;
     this._auth.CreateTask(this.registerTask).subscribe(
       (res) => {
         this._snackBar.open('Realizado com sucesso', 'OK'),
@@ -103,6 +104,7 @@ export class SpecialEventsComponent implements OnInit {
     this.show = null;
   }
    DeleteTask() {
+    this.loadingData = true;
      this._auth.deleteTask(this.newdata).subscribe(
       (res) => { this.specialEvents = res        
         },
@@ -114,6 +116,7 @@ export class SpecialEventsComponent implements OnInit {
     }
 
 doTask(id, status) {
+  this.loadingData = true;
     this.updateTask._id = id;
     this.updateTask.status = status;
     // alert(this.updateTask.status+"-"+this.updateTask._id);
