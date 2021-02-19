@@ -64,7 +64,7 @@ export class SpecialEventsComponent implements OnInit {
         (res) => {
           this.specialEvents = res;
           this.loadingData = false;
-          if(this.specialEvents == []){
+          if(res == []){
             this.emptyArray = true;            
           }
         }
