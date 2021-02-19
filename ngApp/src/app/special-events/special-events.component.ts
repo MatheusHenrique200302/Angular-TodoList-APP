@@ -110,6 +110,7 @@ export class SpecialEventsComponent implements OnInit {
     );     
     this.show2 = null;
     this.delsnackbar = true;
+    this.LoadTasks();
     }
 
 doTask(id, status) {
