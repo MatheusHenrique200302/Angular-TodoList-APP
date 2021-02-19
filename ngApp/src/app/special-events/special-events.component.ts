@@ -36,6 +36,8 @@ export class SpecialEventsComponent implements OnInit {
   specialEvents = [];
   show = null;
   show2 = null;
+  loadingData = null;
+  emptyArray = null;
   registerTask = {
     taskname: '',
     taskdesc: '',
@@ -57,9 +59,17 @@ export class SpecialEventsComponent implements OnInit {
   ) {}
 
     LoadTasks(){
+      this.loadingData = true;
       this._eventService.getSpecialEvents().subscribe(
-        (res) => (this.specialEvents = res),
-        (err) => {
+        (res) => {
+          this.specialEvents = res;
+          this.loadingData = false;
+          if(this.specialEvents == []){
+            this.emptyArray = true;            
+          }
+        }
+        
+        ,(err) => {
           if (err instanceof HttpErrorResponse) {
             if (err.status === 401) {
               this._router.navigate(['/login']);
