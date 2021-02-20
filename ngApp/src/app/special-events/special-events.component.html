@@ -21,9 +21,10 @@
     <div class="card shadow">
       <ul class="list-group">
         <div class="row">
-          <div class="col-6">
-            <div class="m-2 p-1">
+          <div class="col-4">
+            <div class="m-2 p-1 float-left">
               <button
+              matTooltip="Adicionar Tarefa"
                 class="btn btn-outline-success rounded-pill"
                 (click)="show = !show"
               >
@@ -31,9 +32,21 @@
               </button>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-4">
+            <div class="m-2  text-center">
+              <button
+                class="btn btn-outline-primary rounded-pill"
+                (click)="this.LoadTasks()"
+              >
+              <mat-icon matTooltip="Atualizar" aria-hidden="false" class=" pt-1">cached</mat-icon>
+              </button>
+            </div>
+          </div>
+        
+          <div class="col-4">
             <div class="m-2 p-1 float-right">
               <button
+              matTooltip="Adicionar Tarefa"
                 class="btn btn-outline-danger rounded-pill"
                 (click)="show2 = !show2"
               >
@@ -98,6 +111,7 @@
                   <button (click)="DeleteTask()" class="btn btn-danger mt-3">Excluir</button>
               </div>
             </div>
+           
           </div>
         </div>
         <li class="list-group-item">

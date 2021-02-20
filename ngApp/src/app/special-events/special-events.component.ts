@@ -60,6 +60,7 @@ export class SpecialEventsComponent implements OnInit {
 
     LoadTasks(){
       this.loadingData = true;
+      this.emptyArray = false;
       this._eventService.getSpecialEvents().subscribe(
         (res) => {
           this.specialEvents = res;
@@ -81,6 +82,8 @@ export class SpecialEventsComponent implements OnInit {
       );
     }  
   ngOnInit() {
+    this.loadingData = true;
+  
     this.LoadTasks();
     if(this.delsnackbar == true){
       this._snackBar.open('Deletado com sucesso', 'OK');
@@ -88,6 +91,7 @@ export class SpecialEventsComponent implements OnInit {
     }
   }
   CreateTask() {
+    this.emptyArray = false;
     this.loadingData = true;
     this._auth.CreateTask(this.registerTask).subscribe(
       (res) => {
@@ -102,8 +106,9 @@ export class SpecialEventsComponent implements OnInit {
       taskstatus: false,
     };
     this.show = null;
+    this.ngOnInit();
   }
-   DeleteTask() {
+  async DeleteTask() {
     this.loadingData = true;
      this._auth.deleteTask(this.newdata).subscribe(
       (res) => { this.specialEvents = res        
@@ -112,7 +117,9 @@ export class SpecialEventsComponent implements OnInit {
     );     
     this.show2 = null;
     this.delsnackbar = true;
+    await this.delay(300);
     this.LoadTasks();
+    
     }
 
 doTask(id, status) {
@@ -128,4 +135,7 @@ doTask(id, status) {
 
     this.ngOnInit();
   }
+   delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+}
 }
